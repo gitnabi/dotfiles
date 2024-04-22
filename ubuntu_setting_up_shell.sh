@@ -5,7 +5,7 @@ sudo apt-get update > /dev/null
 sudo apt-get install -y zsh git curl gawk > /dev/null
 sudo chsh -s $(which zsh) $USER
 
-printf "Y\n" | (sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)") > /dev/null
+printf "Y\n" | (sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)") > /dev/null 2>&1
 
 git clone --depth=1 https://github.com/romkatv/powerlevel10k.git ${ZSH_CUSTOM:-$HOME/.oh-my-zsh/custom}/themes/powerlevel10k > /dev/null
 gawk -i inplace '{gsub(/ZSH_THEME="robbyrussell"/,"# ZSH_THEME=\"robbyrussell\"\nZSH_THEME=\"powerlevel10k/powerlevel10k\"")}1' ~/.zshrc
